@@ -6,6 +6,9 @@ public class FoodTruck {
 	public int rating;
 	public int numId;
 	
+	public FoodTruck() {
+		
+	}
 	
 	public FoodTruck(String name, String foodType, int rating, int numId) {
 		this.name = name;
