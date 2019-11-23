@@ -3,9 +3,7 @@ package foodie;
 import java.util.Scanner;
 
 public class FoodTruckReview {
-	//int numTrucks = 0;
 	FoodTruck[] truck = new FoodTruck[5];
-	
 
 	public static void main(String[] args) {
 		FoodTruckReview ftr = new FoodTruckReview();
@@ -36,14 +34,8 @@ public class FoodTruckReview {
 
 			System.out.println(truck[i]);
 			System.out.println(i);
-			
+
 		}
-		//return numTrucks;
-//		System.out.println(truck[0]);
-//		System.out.println(truck[1]);
-//		System.out.println(truck[2]);
-//		System.out.println(truck[3]);
-//		System.out.println(truck[4]);
 
 		while (true) {
 
@@ -54,9 +46,7 @@ public class FoodTruckReview {
 			int opt = sc.nextInt();
 
 			if (opt == 1) {
-				// printNames(truck);
 				for (int i = 0; i < truck.length; i++) {
-
 					System.out.println(truck[i].getName());
 				}
 			}
@@ -87,7 +77,4 @@ public class FoodTruckReview {
 		sc.close();
 	}
 
-//	public void printNames(FoodTruck[] trucks) {
-//	    System.out.println(e.getName());
-	// }
 }
