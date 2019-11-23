@@ -3,15 +3,15 @@ package foodie;
 public class FoodTruck {
 	public String name;
 	public String foodType;
-	public double rating;
+	public int rating;
 	public int numId;
 	
 	
-	public FoodTruck(String name, String foodType, double rating) {
+	public FoodTruck(String name, String foodType, int rating, int numId) {
 		this.name = name;
 		this.foodType = foodType;
 		this.rating = rating;
-		
+		this.numId = numId;
 	}
 
 
@@ -40,7 +40,7 @@ public class FoodTruck {
 	}
 
 
-	public void setRating(double rating) {
+	public void setRating(int rating) {
 		this.rating = rating;
 	}
 
