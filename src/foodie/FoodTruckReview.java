@@ -16,7 +16,7 @@ public class FoodTruckReview {
 			int nextTruckId = 0;
 		for (int i = 0; i < truck.length; i++) {
 
-			nextTruckId = i + 1;
+			nextTruckId = i +1;
 
 			System.out.println("Please input the name of the Food truck: ");
 			String inName = sc.next();
@@ -48,39 +48,38 @@ public class FoodTruckReview {
 
 			if (opt == 1) {
 				for (int i = 0; i < truck.length; i++) {
-					if(truck[i] != null) {
 					System.out.println(truck[i].getName());
-					}
-					
+				}
 			}
 			if (opt == 2) {
-				int sum = 0;
+				double sum = 0;
 				double avgRate;
 				for (int i = 0; i < truck.length; i++) {
-					if (truck[i] != null)
 					sum += truck[i].getRating();
 				}
 				avgRate = sum / truck.length;
 				System.out.println(avgRate);
 			}
 			if (opt == 3) {
-				Double hiRate = truck[0].getRating();
+				double hiRate = truck[0].getRating();
+				int count = 0;
 				for (int i = 0; i < truck.length; i++) {
 					if (hiRate < truck[i].getRating()) {
 						hiRate = truck[i].getRating();
+						count = i;
 					}
-					System.out.println("Highest rated Food Truck is " + truck[i].getName()
-							+ "\nWith a rating of: "+ hiRate);
 				}
-
+				System.out.println("The highest rated Food Truck is " + truck[count].getName()
+						+ "\nWith a rating of: "+ hiRate);
 			}
 			if (opt == 4) {
 				System.out.println("Thanks for using Food Truck Review. \n\tEat on Foodie!");
 				break;
 			}
 		}
-	}
 		sc.close();
-
 	}
-}
+	}
+
+	
+
