@@ -3,7 +3,8 @@ package foodie;
 import java.util.Scanner;
 
 public class FoodTruckReview {
-	FoodTruck[] truck = new FoodTruck[5];
+	int n = 5;
+	FoodTruck[] truck = new FoodTruck[n];
 
 	public static void main(String[] args) {
 		FoodTruckReview ftr = new FoodTruckReview();
@@ -12,12 +13,12 @@ public class FoodTruckReview {
 
 	public void run() {
 		Scanner sc = new Scanner(System.in);
-
+			int nextTruckId = 0;
 		for (int i = 0; i < truck.length; i++) {
 
-			int nextTruckId = 1 + i;
+			nextTruckId = i + 1;
 
-			System.out.println("Please input the name");
+			System.out.println("Please input the name of the Food truck: ");
 			String inName = sc.next();
 
 			if (inName.equals("quit")) {
@@ -35,7 +36,7 @@ public class FoodTruckReview {
 			System.out.println(truck[i]);
 			System.out.println(i);
 
-		}
+		} 
 
 		while (true) {
 
@@ -47,13 +48,16 @@ public class FoodTruckReview {
 
 			if (opt == 1) {
 				for (int i = 0; i < truck.length; i++) {
+					if(truck[i] != null) {
 					System.out.println(truck[i].getName());
-				}
+					}
+					
 			}
 			if (opt == 2) {
 				int sum = 0;
 				double avgRate;
 				for (int i = 0; i < truck.length; i++) {
+					if (truck[i] != null)
 					sum += truck[i].getRating();
 				}
 				avgRate = sum / truck.length;
@@ -65,8 +69,9 @@ public class FoodTruckReview {
 					if (hiRate < truck[i].getRating()) {
 						hiRate = truck[i].getRating();
 					}
+					System.out.println("Highest rated Food Truck is " + truck[i].getName()
+							+ "\nWith a rating of: "+ hiRate);
 				}
-				System.out.println("Highest rated Food Truck is " + hiRate);
 
 			}
 			if (opt == 4) {
@@ -74,7 +79,8 @@ public class FoodTruckReview {
 				break;
 			}
 		}
-		sc.close();
 	}
+		sc.close();
 
+	}
 }
