@@ -3,9 +3,12 @@ package foodie;
 import java.util.Scanner;
 
 public class FoodTruckReview {
+
 	int n = 5;
-	FoodTruck[] truck = new FoodTruck[n];
 	int nextTruckId = 0;
+	FoodTruck[] truck = new FoodTruck[n];
+
+	Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		FoodTruckReview ftr = new FoodTruckReview();
@@ -13,8 +16,34 @@ public class FoodTruckReview {
 	}
 
 	public void run() {
-		Scanner sc = new Scanner(System.in);
+		printInput();
+		printWhile();
 
+		sc.close();
+	}
+
+	private void printWhile() {
+		while (true) {
+			printMenu();
+			int opt = sc.nextInt();
+
+			if (opt == 1) {
+				printNames();
+			}
+			if (opt == 2) {
+				printAvgRate();
+			}
+			if (opt == 3) {
+				printHiRate();
+			}
+			if (opt == 4) {
+				printExit();
+				break;
+			}
+		}
+	}
+
+	private void printInput() {
 		for (int i = 0; i < truck.length; i++) {
 
 			nextTruckId = i + 1;
@@ -34,26 +63,6 @@ public class FoodTruckReview {
 
 			truck[i] = new FoodTruck(inName, fType, rate, nextTruckId);
 		}
-
-		while (true) {
-			printMenu();
-			int opt = sc.nextInt();
-
-			if (opt == 1) {
-				printNames();
-			}
-			if (opt == 2) {
-				printAvgRate();
-			}
-			if (opt == 3) {
-				printHiRate();
-			}
-			if (opt == 4) {
-				printExit();
-				break;
-			}
-		}
-		sc.close();
 	}
 
 	private void printExit() {
