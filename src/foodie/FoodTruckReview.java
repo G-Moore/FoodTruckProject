@@ -19,17 +19,17 @@ public class FoodTruckReview {
 
 			nextTruckId = i + 1;
 
-			System.out.println("Please input the name of the Food truck: ");
+			System.out.println("Please input the name of the Food truck or \"quit\" to continue. ");
 			String inName = sc.next();
 
 			if (inName.equals("quit")) {
 				break;
 			}
 
-			System.out.println("Please input the food type");
+			System.out.println("Please input the food type. ");
 			String fType = sc.next();
 
-			System.out.println("Please input the rating");
+			System.out.println("Please input the rating from 1 - 10. ");
 			int rate = sc.nextInt();
 
 			truck[i] = new FoodTruck(inName, fType, rate, nextTruckId);
