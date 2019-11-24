@@ -49,8 +49,8 @@ public class FoodTruckReview {
 
 			if (opt == 1) {
 				for (int i = 0; i < truck.length; i++) {
-					if(truck[i] != null)
-					System.out.println(truck[i].getName());
+					if (truck[i] != null)
+						System.out.println(truck[i].getName());
 				}
 			}
 			if (opt == 2) {
@@ -58,23 +58,23 @@ public class FoodTruckReview {
 				double avgRate;
 				int avgCount = 0;
 				for (int i = 0; i < truck.length; i++) {
-					if(truck[i] != null) {
-					sum += truck[i].getRating();
-					avgCount = i;
+					if (truck[i] != null) {
+						sum += truck[i].getRating();
+						avgCount = i;
+					}
 				}
-				}
-				avgRate = sum / (truck[avgCount].getNumId()) ;
+				avgRate = sum / (truck[avgCount].getNumId());
 				System.out.println(avgRate);
 			}
 			if (opt == 3) {
 				double hiRate = truck[0].getRating();
 				int count = 0;
 				for (int i = 0; i < truck.length; i++) {
-					if(truck[i] != null)
-					if (hiRate < truck[i].getRating()) {
-						hiRate = truck[i].getRating();
-						count = i;
-					}
+					if (truck[i] != null)
+						if (hiRate < truck[i].getRating()) {
+							hiRate = truck[i].getRating();
+							count = i;
+						}
 				}
 				System.out.println(
 						"The highest rated Food Truck is " + truck[count].getName() + "\nWith a rating of: " + hiRate);
