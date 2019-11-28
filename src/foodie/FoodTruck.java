@@ -1,59 +1,61 @@
 package foodie;
 
 public class FoodTruck {
-	public String name;
-	public String foodType;
-	public int rating;
-	public int numId;
+	private static int nextTruckId = 1;
+	private String name;
+	private String foodType;
+	private int rating;
+	private int numId;
 	
-	public FoodTruck() {
+	protected FoodTruck() {
 		
 	}
 	
-	public FoodTruck(String name, String foodType, int rating, int numId) {
+	protected FoodTruck(String name, String foodType, int rating, int numId) {
 		this.name = name;
 		this.foodType = foodType;
 		this.rating = rating;
-		this.numId = numId;
+		this.numId = nextTruckId++;
+		
 	}
 
 
-	public String getName() {
+	protected String getName() {
 		return name;
 	}
 
 
-	public void setName(String name) {
+	protected void setName(String name) {
 		this.name = name;
 	}
 
 
-	public String getFoodType() {
+	protected String getFoodType() {
 		return foodType;
 	}
 
 
-	public void setFoodType(String foodType) {
+	protected void setFoodType(String foodType) {
 		this.foodType = foodType;
 	}
 
 
-	public double getRating() {
+	protected double getRating() {
 		return rating;
 	}
 
 
-	public void setRating(int rating) {
+	protected void setRating(int rating) {
 		this.rating = rating;
 	}
 
 
-	public int getNumId() {
+	protected int getNumId() {
 		return numId;
 	}
 
 
-	public void setNumId(int numId) {
+	protected void setNumId(int numId) {
 		this.numId = numId;
 	}
 

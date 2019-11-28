@@ -3,10 +3,9 @@ package foodie;
 import java.util.Scanner;
 
 public class FoodTruckReview {
-
-	int n = 5;
-	int nextTruckId = 0;
-	FoodTruck[] truck = new FoodTruck[n];
+	
+	private int n = 5;
+	private FoodTruck[] truck = new FoodTruck[n];
 
 	Scanner sc = new Scanner(System.in);
 
@@ -46,8 +45,7 @@ public class FoodTruckReview {
 	private void printInput() {
 		for (int i = 0; i < truck.length; i++) {
 
-			nextTruckId = i + 1;
-
+			System.out.println("\t\tWelcome to Food Truck Review");
 			System.out.println("Please input the name of the Food truck or \"quit\" to continue. ");
 			String inName = sc.next();
 
@@ -61,7 +59,7 @@ public class FoodTruckReview {
 			System.out.println("Please input the rating from 1 - 10. ");
 			int rate = sc.nextInt();
 
-			truck[i] = new FoodTruck(inName, fType, rate, nextTruckId);
+			truck[i] = new FoodTruck(inName, fType, rate, 0);
 		}
 	}
 
@@ -78,7 +76,7 @@ public class FoodTruckReview {
 	private void printNames() {
 		for (int i = 0; i < truck.length; i++) {
 			if (truck[i] != null)
-				System.out.println(truck[i].getName());
+				System.out.println(truck[i].toString());
 		}
 	}
 
@@ -93,7 +91,7 @@ public class FoodTruckReview {
 			}
 		}
 		avgRate = sum / (truck[avgCount].getNumId());
-		System.out.println(avgRate);
+		System.out.println("The average rating is: " + avgRate);
 	}
 
 	private void printHiRate() {
